@@ -5,7 +5,7 @@
     "autoload": {
         "psr-4": {
             "Teraone\\LaravelIbanToBic\\": "src/",
-            "Teraone\\LaravelIbanToBic\\Database\\Factories\\": "database/factories",
+            "Teraone\\LaravelIbanToBic\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
