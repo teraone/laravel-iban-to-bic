@@ -1,0 +1,6 @@
+.idea
+.phpunit.cache
+vendor
+composer.lock
+phpunit.xml
+phpunit.xml.bak

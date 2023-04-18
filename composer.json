@@ -1,0 +1,40 @@
+{
+    "name": "teraone/laravel-iban-to-bic",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Teraone\\LaravelIbanToBic\\": "src/",
+            "Teraone\\LaravelIbanToBic\\Database\\Factories\\": "database/factories",
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Teraone\\LaravelIbanToBic\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Teraone\\LaravelIbanToBic\\IbanToBicServiceProvider"
+            ],
+            "aliases": {
+                "IbanToBicConverter": "Teraone\\LaravelIbanToBic\\Facades\\IbanToBicConverter"
+            }
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.4",
+        "laravel/pint": "^1.8"
+    },
+    "require": {
+        "maatwebsite/excel": "^3.1",
+        "ext-bcmath": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
