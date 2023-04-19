@@ -8,10 +8,13 @@ use Teraone\LaravelIbanToBic\Exceptions\BicNotFoundException;
 use Teraone\LaravelIbanToBic\Exceptions\CountryNotSupportedException;
 use Teraone\LaravelIbanToBic\Exceptions\FormatNotValidException;
 use Teraone\LaravelIbanToBic\Exceptions\IbanNotValidException;
+use Teraone\LaravelIbanToBic\Rules\IbanHasGermanCountryCodeRule;
+use Teraone\LaravelIbanToBic\Rules\IbanValidChecksumRule;
+use Teraone\LaravelIbanToBic\Rules\IbanValidFormatRule;
 
 class IbanToBicConverter
 {
-    public function __construct(protected IbanValidator $validator, protected DataProviderInterface $dataProvider)
+    public function __construct(protected DataProviderInterface $dataProvider)
     {
     }
 
@@ -35,7 +38,7 @@ class IbanToBicConverter
      */
     private function getBlzFromIban(string $iban): string
     {
-       $this->validator->validate($iban);
+       $this->validate($iban);
 
         preg_replace('/\s/', '', $iban);
 
@@ -56,5 +59,31 @@ class IbanToBicConverter
         }
 
         return $banks->unique();
+    }
+
+    private function validate(string $iban): void
+    {
+        preg_replace('/\s/', '', $iban);
+
+        $rules = [
+            [
+                'rule' => new IbanValidFormatRule(),
+                'exception' => new FormatNotValidException(),
+            ],
+            [
+                'rule' => new IbanValidChecksumRule(),
+                'exception' => new IbanNotValidException(),
+            ],
+            [
+                'rule' => new IbanHasGermanCountryCodeRule(),
+                'exception' => new CountryNotSupportedException(),
+            ],
+        ];
+
+        foreach ($rules as $rule) {
+            if (! $rule['rule']->passes('iban', $iban)) {
+                throw $rule['exception'];
+            }
+        }
     }
 }

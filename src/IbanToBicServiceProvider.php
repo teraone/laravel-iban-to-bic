@@ -11,7 +11,6 @@ class IbanToBicServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->bind(IbanValidator::class, fn($app) => new IbanValidator());
         $this->app->bind(DataProviderInterface::class, DatabaseDataProvider::class);
         $this->app->bind('IbanToBicConverter', IbanToBicConverter::class);
     }
