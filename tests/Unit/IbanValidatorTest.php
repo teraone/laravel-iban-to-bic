@@ -5,6 +5,7 @@ use Teraone\LaravelIbanToBic\Exceptions\FormatNotValidException;
 use Teraone\LaravelIbanToBic\Exceptions\IbanNotValidException;
 use Teraone\LaravelIbanToBic\IbanValidator;
 
+
 it('checks that an iban starts with two letters', fn (string $iban) => app(IbanValidator::class)->validate($iban))
     ->throws(FormatNotValidException::class)
     ->with(['0002120300000000202051']);

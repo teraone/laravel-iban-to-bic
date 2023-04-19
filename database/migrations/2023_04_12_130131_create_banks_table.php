@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('banks', function (Blueprint $table) {
+        Schema::create('teraone_banks', function (Blueprint $table) {
             $table->id();
             $table->string('bundesbank_id')->unique();
             $table->string('blz');
@@ -23,6 +23,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('banks');
+        Schema::dropIfExists('teraone_banks');
     }
 };

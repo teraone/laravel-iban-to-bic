@@ -16,9 +16,4 @@ class TestCase extends Orchestra
             IbanToBicServiceProvider::class,
         ];
     }
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-    }
 }
