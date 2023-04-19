@@ -11,7 +11,7 @@ class IbanToBicServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->bind(IbanValidator::class, fn ($app) => new IbanValidator());
+        $this->app->bind(IbanValidator::class, fn($app) => new IbanValidator());
         $this->app->bind(DataProviderInterface::class, DatabaseDataProvider::class);
         $this->app->bind('IbanToBicConverter', IbanToBicConverter::class);
     }
@@ -24,6 +24,8 @@ class IbanToBicServiceProvider extends ServiceProvider
             $this->commands([
                 ImportBankDataCommand::class,
             ]);
+
+            $this->publishes([__DIR__.'/../storage/bank-data.xlsx' => storage_path('/vendor/teraone/laravel-iban-to-bic/bank-data.xlsx')]);
         }
     }
 }

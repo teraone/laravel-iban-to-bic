@@ -14,6 +14,7 @@ class Bank extends Model
 
     protected $guarded = [];
 
+    protected $table = 'teraone_banks';
     protected static function newFactory(): BankFactory
     {
         return BankFactory::new();
