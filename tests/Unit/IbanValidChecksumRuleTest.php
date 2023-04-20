@@ -25,3 +25,9 @@ it('passes when given a valid iban', function (string $iban) {
 
     expect($rule->passes('iban', $iban))->toBeTrue();
 })->with(['DE02701500000000594937', 'DE02100500000054540402', 'GB29NWBK60161331926819', 'AT023200000000641605']);
+
+it('returns the correct error message', function () {
+    $rule = new IbanValidChecksumRule();
+
+    expect($rule->message())->toBe('IBAN is not valid');
+});

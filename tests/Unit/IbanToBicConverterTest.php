@@ -1,8 +1,13 @@
 <?php
 
 use Teraone\LaravelIbanToBic\Exceptions\BicNotFoundException;
+use Teraone\LaravelIbanToBic\Exceptions\IbanToBicException;
 use Teraone\LaravelIbanToBic\Facades\IbanToBicConverter;
 use Teraone\LaravelIbanToBic\Models\Bank;
+
+it('throws an exception if the iban cannot be validated', function (string $iban) {
+    IbanToBicConverter::getBic($iban);
+})->with(['DE09'])->expectException(IbanToBicException::class);
 
 it('throws an exception if it cant find a bic', function (string $iban) {
     IbanToBicConverter::getBic($iban);

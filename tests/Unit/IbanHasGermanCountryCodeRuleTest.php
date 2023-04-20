@@ -25,3 +25,9 @@ it('fails when given a non german iban', function (string $iban) {
 
     expect($rule->passes('iban', $iban))->toBeFalse();
 })->with(['GB29NWBK60161331926819', 'AT023200000000641605']);
+
+it('returns the correct error message', function () {
+    $rule = new IbanHasGermanCountryCodeRule();
+
+    expect($rule->message())->toBe('Has to be a german IBAN');
+});
