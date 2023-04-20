@@ -30,6 +30,9 @@ This Package adds a Facade called 'IbanToBicConverter' with one function called 
 $bank = \Teraone\LaravelIbanToBic\Facades\IbanToBicConverter::getBic($iban);
 ```
 
+## Data
+The Data this Package uses is provided by Bundesbank and can be found [here](https://www.bundesbank.de/en/tasks/payment-systems/services/bank-sort-codes/download-bank-sort-codes-626218).
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
