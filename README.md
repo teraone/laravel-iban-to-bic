@@ -24,7 +24,7 @@ php artisan import:bank-data
 
 ## Usage
 
-This Package adds a Facade called 'IbanToBicConverter' with one function called 'getBic', that returns a 'Bank' Object containing the BIC and some additional Information like banks name and Bankleitzahl.
+This Package adds a Facade called 'IbanToBicConverter' with one function called 'getBic', that returns a 'Bank' Object containing the BIC and some additional Information like the banks name and Bankleitzahl.
 
 ```php
 $bank = \Teraone\LaravelIbanToBic\Facades\IbanToBicConverter::getBic($iban);
