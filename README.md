@@ -2,9 +2,8 @@
 
 # Laravel IBAN to BIC Converter
 
-| :exclamation:  **Currently only works with german IBANs** |
-|-----------------------------------------------------------|
-
+> **Warning**
+> Currently only works with german IBANs
 
 ## Installation
 
