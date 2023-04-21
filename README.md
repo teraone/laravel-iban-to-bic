@@ -18,7 +18,7 @@ Migrate your database:
 php artisan migrate
 ```
 
-After installing **or** **updating** the package you these two commands to import the most recent data:
+After installing **or updating** the package run these two commands to import the most recent data:
 ```bash
 php artisan vendor:publish --provider="Teraone\LaravelIbanToBic\IbanToBicServiceProvider" --force
 ```
