@@ -1,6 +1,10 @@
+<p align="center"><a href="https://teraone.de" target="_blank"><img src="https://res.cloudinary.com/hrltx1qd5/image/upload/v1587373434/zvlmq3tjtrn9rk2lm3du.svg" width="400"></a></p>
+
 # Laravel IBAN to BIC Converter
 
-**Currently only works with german IBANs**
+| :exclamation:  **Currently only works with german IBANs** |
+|-----------------------------------------------------------|
+
 
 ## Installation
 
