@@ -4,11 +4,13 @@ namespace Teraone\LaravelIbanToBic\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class IbanHasGermanCountryCodeRule implements Rule
+class IsGermanIban implements Rule
 {
     public function passes($attribute, $value): bool
     {
-        if (! str_starts_with($value, 'DE')) {
+        preg_match('/^DE\w{20}$/i', $value, $matches);
+
+        if (count($matches) === 0) {
             return false;
         }
 

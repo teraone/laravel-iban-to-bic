@@ -49,3 +49,9 @@ it('returns the correct error message', function () {
 
     expect($rule->message())->toBe('Invalid IBAN Format');
 });
+
+test('test', function (string $iban) {
+    $rule = new IbanValidFormatRule();
+
+    expect($rule->message())->toBe('Invalid IBAN Format');
+})->with(['DE027015000000005949']);
