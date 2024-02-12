@@ -8,9 +8,9 @@ use Teraone\LaravelIbanToBic\Exceptions\BicNotFoundException;
 use Teraone\LaravelIbanToBic\Exceptions\CountryNotSupportedException;
 use Teraone\LaravelIbanToBic\Exceptions\FormatNotValidException;
 use Teraone\LaravelIbanToBic\Exceptions\IbanNotValidException;
-use Teraone\LaravelIbanToBic\Rules\IsGermanIban;
 use Teraone\LaravelIbanToBic\Rules\IbanValidChecksumRule;
 use Teraone\LaravelIbanToBic\Rules\IbanValidFormatRule;
+use Teraone\LaravelIbanToBic\Rules\IsGermanIban;
 
 class IbanToBicConverter
 {

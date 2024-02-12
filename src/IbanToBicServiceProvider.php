@@ -9,13 +9,13 @@ use Teraone\LaravelIbanToBic\DataProvider\DataProviderInterface;
 
 class IbanToBicServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->bind(DataProviderInterface::class, DatabaseDataProvider::class);
         $this->app->bind('IbanToBicConverter', IbanToBicConverter::class);
     }
 
-    public function boot()
+    public function boot(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
