@@ -24,7 +24,7 @@ class IbanToBicServiceProvider extends ServiceProvider
                 ImportBankDataCommand::class,
             ]);
 
-            $this->publishes([__DIR__.'/../storage/bank-data.xlsx' => storage_path('/vendor/teraone/laravel-iban-to-bic/bank-data.xlsx')]);
+            $this->publishes([__DIR__.'/../storage/bank-data.csv' => storage_path('/vendor/teraone/laravel-iban-to-bic/bank-data.csv')]);
         }
     }
 }

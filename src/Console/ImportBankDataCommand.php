@@ -15,6 +15,6 @@ class ImportBankDataCommand extends Command
     public function handle(): void
     {
         DB::table('teraone_banks')->truncate();
-        (new BanksImport())->withOutput($this->output)->import(storage_path('vendor/teraone/laravel-iban-to-bic/bank-data.xlsx'));
+        (new BanksImport())->withOutput($this->output)->import(storage_path('vendor/teraone/laravel-iban-to-bic/bank-data.csv'));
     }
 }
