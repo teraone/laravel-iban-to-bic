@@ -2,6 +2,4 @@
 
 namespace Teraone\LaravelIbanToBic\Exceptions;
 
-class FormatNotValidException extends IbanToBicException
-{
-}
+class FormatNotValidException extends IbanToBicException {}

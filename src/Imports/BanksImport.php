@@ -11,7 +11,7 @@ use Maatwebsite\Excel\Concerns\WithProgressBar;
 use Maatwebsite\Excel\Concerns\WithValidation;
 use Teraone\LaravelIbanToBic\Models\Bank;
 
-class BanksImport implements ToModel, WithProgressBar, WithChunkReading, WithValidation, SkipsOnFailure
+class BanksImport implements SkipsOnFailure, ToModel, WithChunkReading, WithProgressBar, WithValidation
 {
     use Importable, SkipsFailures;
 

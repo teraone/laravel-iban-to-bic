@@ -14,9 +14,7 @@ use Teraone\LaravelIbanToBic\Rules\IsGermanIban;
 
 class IbanToBicConverter
 {
-    public function __construct(protected DataProviderInterface $dataProvider)
-    {
-    }
+    public function __construct(protected DataProviderInterface $dataProvider) {}
 
     /**
      * @throws IbanNotValidException
@@ -38,7 +36,7 @@ class IbanToBicConverter
      */
     private function getBlzFromIban(string $iban): string
     {
-       $this->validate($iban);
+        $this->validate($iban);
 
         preg_replace('/\s/', '', $iban);
 
@@ -55,7 +53,7 @@ class IbanToBicConverter
         $banks = $this->dataProvider->getBanksFor($blz);
 
         if ($banks->isEmpty()) {
-            throw new BicNotFoundException();
+            throw new BicNotFoundException;
         }
 
         return $banks->unique();
@@ -67,16 +65,16 @@ class IbanToBicConverter
 
         $rules = [
             [
-                'rule' => new IbanValidFormatRule(),
-                'exception' => new FormatNotValidException(),
+                'rule' => new IbanValidFormatRule,
+                'exception' => new FormatNotValidException,
             ],
             [
-                'rule' => new IbanValidChecksumRule(),
-                'exception' => new IbanNotValidException(),
+                'rule' => new IbanValidChecksumRule,
+                'exception' => new IbanNotValidException,
             ],
             [
-                'rule' => new IsGermanIban(),
-                'exception' => new CountryNotSupportedException(),
+                'rule' => new IsGermanIban,
+                'exception' => new CountryNotSupportedException,
             ],
         ];
 

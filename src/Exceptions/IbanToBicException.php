@@ -4,6 +4,4 @@ namespace Teraone\LaravelIbanToBic\Exceptions;
 
 use Exception;
 
-class IbanToBicException extends Exception
-{
-}
+class IbanToBicException extends Exception {}

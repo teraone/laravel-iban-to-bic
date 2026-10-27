@@ -2,6 +2,4 @@
 
 namespace Teraone\LaravelIbanToBic\Exceptions;
 
-class CountryNotSupportedException extends IbanToBicException
-{
-}
+class CountryNotSupportedException extends IbanToBicException {}

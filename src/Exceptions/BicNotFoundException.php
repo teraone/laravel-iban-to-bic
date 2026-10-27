@@ -2,6 +2,4 @@
 
 namespace Teraone\LaravelIbanToBic\Exceptions;
 
-class BicNotFoundException extends IbanToBicException
-{
-}
+class BicNotFoundException extends IbanToBicException {}
