@@ -24,12 +24,12 @@
         }
     },
     "require-dev": {
-        "orchestra/testbench": "^8.0",
+        "orchestra/testbench": "^11.3",
         "laravel/pint": "^1.8",
-        "pestphp/pest": "^2.5"
+        "pestphp/pest": "^4.7.8"
     },
     "require": {
-        "maatwebsite/excel": "^3.1",
+        "maatwebsite/excel": "^4.0",
         "ext-bcmath": "*"
     },
     "config": {
